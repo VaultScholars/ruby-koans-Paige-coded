@@ -1,0 +1,13 @@
+{
+  "name": "Ruby Koans",
+  "image": "mcr.microsoft.com/devcontainers/ruby",
+  "features": {},
+  "postCreateCommand": "gem install rake solargraph",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "castwide.solargraph"
+      ]
+    }
+  }
+}
