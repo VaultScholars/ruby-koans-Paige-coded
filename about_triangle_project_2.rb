@@ -14,3 +14,29 @@ class AboutTriangleProject2 < Neo::Koan
     # HINT: for tips, see http://stackoverflow.com/questions/3834203/ruby-koan-151-raising-exceptions
   end
 end
+# triangle.rb
+
+class TriangleError < StandardError
+end
+
+def triangle(a, b, c)
+  sides = [a, b, c]
+
+  # Illegal if any side is zero or negative
+  if sides.any? { |side| side <= 0 }
+    raise TriangleError
+  end
+
+  # Illegal if triangle inequality is violated
+  if a + b <= c || a + c <= b || b + c <= a
+    raise TriangleError
+  end
+
+  if a == b && b == c
+    :equilateral
+  elsif a == b || a == c || b == c
+    :isosceles
+  else
+    :scalene
+  end
+end
